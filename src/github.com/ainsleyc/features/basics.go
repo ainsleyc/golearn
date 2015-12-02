@@ -34,4 +34,6 @@ func main() {
   fmt.Println("Swap", a, b) 
   fmt.Println(split(10)) 
   fmt.Println(outVar, inVar, initVar, implA, implB)
+  i := 3.142
+  fmt.Println("Inference", i)
 }

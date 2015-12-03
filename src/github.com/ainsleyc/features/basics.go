@@ -36,4 +36,6 @@ func main() {
   fmt.Println(outVar, inVar, initVar, implA, implB)
   i := 3.142
   fmt.Println("Inference", i)
+  const Truth = true
+  fmt.Println("Const", Truth)
 }

@@ -38,4 +38,7 @@ func main() {
   fmt.Println("Inference", i)
   const Truth = true
   fmt.Println("Const", Truth)
+  for i := 1; i < 3; i++ {
+    fmt.Println("Loop", i)
+  }
 }

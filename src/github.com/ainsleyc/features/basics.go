@@ -26,6 +26,8 @@ func main() {
   var inVar int
   var initVar = "blah" 
   implA, implB := 2, false
+  defer fmt.Println("DEFER 1")
+  defer fmt.Println("DEFER 2")
 	fmt.Println("My favorite number is", rand.Intn(10))
 	fmt.Println("Square root of 4 is", math.Sqrt(4))
 	fmt.Println("Pi is", math.Pi)
@@ -41,4 +43,8 @@ func main() {
   for i := 1; i < 3; i++ {
     fmt.Println("Loop", i)
   }
+  if ifTest := true; ifTest == true {
+    fmt.Println("IF")
+  }
+  
 }

@@ -46,5 +46,7 @@ func main() {
   if ifTest := true; ifTest == true {
     fmt.Println("IF")
   }
-  
+  ptrVal := 20 
+  var ptr = &ptrVal
+  fmt.Println("Pounter", *ptr)
 }

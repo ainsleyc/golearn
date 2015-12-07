@@ -20,6 +20,11 @@ func split(sum int) (x, y int) {
   return 
 }
 
+type TestStruct struct {
+  X int
+  Y int
+}
+
 var outVar bool
 
 func main() {
@@ -49,4 +54,5 @@ func main() {
   ptrVal := 20 
   var ptr = &ptrVal
   fmt.Println("Pounter", *ptr)
+  fmt.Println(TestStruct{1, 2})
 }

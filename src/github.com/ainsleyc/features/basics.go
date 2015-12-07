@@ -54,5 +54,11 @@ func main() {
   ptrVal := 20 
   var ptr = &ptrVal
   fmt.Println("Pounter", *ptr)
+  testStruct := TestStruct{1, 2}
   fmt.Println(TestStruct{1, 2})
+  testStruct.X = 4
+  fmt.Println(testStruct)
+  structPtr := &testStruct
+  structPtr.X = 3
+  fmt.Println(*structPtr)
 }

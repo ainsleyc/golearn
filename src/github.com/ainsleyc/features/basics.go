@@ -43,9 +43,9 @@ func (t TestStringer) String() string {
   return "BLAH"
 }
 
-func (t TestStringer) TestError(int) (int, error) {
+func (t TestStringer) TestError(x int) (int, error) {
   err := TestStringerError{"Because I said so"}
-  return 0, &err
+  return x, &err
 }
 
 var outVar bool
@@ -109,6 +109,6 @@ func main() {
   }
   testStringer := TestStringer{}
   fmt.Println("TestStringer", testStringer)
-  _, err := testStringer.TestError(1)
-  fmt.Println("TestStringerError", err) 
+  result, err := testStringer.TestError(1)
+  fmt.Println("TestStringerError", result, err) 
 }

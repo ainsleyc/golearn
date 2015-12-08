@@ -69,5 +69,8 @@ func main() {
   for arrCtr := 0; arrCtr < len(arr2); arrCtr++ {
     fmt.Println(arr2[arrCtr])
   }
-
+  slice := arr2[1:3]
+  fmt.Println("Slice", slice[0], slice[1])
+  slice2 := append(slice, 5, 6, 7)
+  fmt.Println("Slice2", slice2[3], slice2[4])
 }

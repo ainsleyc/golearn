@@ -76,4 +76,11 @@ func main() {
   for i, v := range slice2 {
     fmt.Printf("Slice2 %d = %d\n", i, v)
   }
+  var testMap = map[string]int{
+    "ONE": 1,
+    "TWO": 2,
+  }
+  for i, v := range testMap {
+    fmt.Printf("Map %s = %d\n", i, v)
+  }
 }

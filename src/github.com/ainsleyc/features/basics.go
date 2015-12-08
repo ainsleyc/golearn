@@ -61,4 +61,13 @@ func main() {
   structPtr := &testStruct
   structPtr.X = 3
   fmt.Println(*structPtr)
+  var arr[2]int
+  arr[0] = 1
+  arr[1] = 2
+  fmt.Println(arr[0], arr[1])
+  arr2 := []int{2, 3, 4}  
+  for arrCtr := 0; arrCtr < len(arr2); arrCtr++ {
+    fmt.Println(arr2[arrCtr])
+  }
+
 }

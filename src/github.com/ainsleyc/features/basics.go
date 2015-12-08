@@ -73,4 +73,7 @@ func main() {
   fmt.Println("Slice", slice[0], slice[1])
   slice2 := append(slice, 5, 6, 7)
   fmt.Println("Slice2", slice2[3], slice2[4])
+  for i, v := range slice2 {
+    fmt.Printf("Slice2 %d = %d\n", i, v)
+  }
 }

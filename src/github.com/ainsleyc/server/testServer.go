@@ -6,17 +6,31 @@ import (
 	"net/http"
 )
 
-type Hello struct{}
+type String string
 
-func (h Hello) ServeHTTP(
+type Struct struct {
+  Greetings string
+  Punct string
+  Who string
+}
+
+func (s String) ServeHTTP(
 	w http.ResponseWriter,
 	r *http.Request) {
-	fmt.Fprint(w, "Hello!")
+	fmt.Fprint(w, s) 
+}
+
+func (s Struct) ServeHTTP(
+	w http.ResponseWriter,
+	r *http.Request) {
+	fmt.Fprint(w, s) 
 }
 
 func main() {
-	var h Hello
-	err := http.ListenAndServe("localhost:4000", h)
+  http.Handle("/string", String("This is a string"))
+  http.Handle("/struct", &Struct{"Hello", ":", "Go"})
+
+	err := http.ListenAndServe("localhost:4000", nil)
 	if err != nil {
 		log.Fatal(err)
 	}

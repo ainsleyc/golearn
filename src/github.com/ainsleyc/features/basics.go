@@ -25,6 +25,10 @@ type TestStruct struct {
   Y int
 }
 
+func (t TestStruct) Sum() int {
+  return t.X + t.Y
+}
+
 var outVar bool
 
 func main() {
@@ -56,6 +60,7 @@ func main() {
   fmt.Println("Pounter", *ptr)
   testStruct := TestStruct{1, 2}
   fmt.Println(TestStruct{1, 2})
+  fmt.Println("Sum", testStruct.Sum())
   testStruct.X = 4
   fmt.Println(testStruct)
   structPtr := &testStruct

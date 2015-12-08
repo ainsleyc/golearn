@@ -31,8 +31,21 @@ func (t TestStruct) Sum() int {
 
 type TestStringer struct {}
 
+type TestStringerError struct {
+  Why string
+}
+
+func (t TestStringerError) Error() string {
+  return t.Why
+}
+
 func (t TestStringer) String() string {
   return "BLAH"
+}
+
+func (t TestStringer) TestError(int) (int, error) {
+  err := TestStringerError{"Because I said so"}
+  return 0, &err
 }
 
 var outVar bool
@@ -96,4 +109,6 @@ func main() {
   }
   testStringer := TestStringer{}
   fmt.Println("TestStringer", testStringer)
+  _, err := testStringer.TestError(1)
+  fmt.Println("TestStringerError", err) 
 }

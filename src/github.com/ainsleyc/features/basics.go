@@ -29,6 +29,12 @@ func (t TestStruct) Sum() int {
   return t.X + t.Y
 }
 
+type TestStringer struct {}
+
+func (t TestStringer) String() string {
+  return "BLAH"
+}
+
 var outVar bool
 
 func main() {
@@ -88,4 +94,6 @@ func main() {
   for i, v := range testMap {
     fmt.Printf("Map %s = %d\n", i, v)
   }
+  testStringer := TestStringer{}
+  fmt.Println("TestStringer", testStringer)
 }
